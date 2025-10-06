@@ -52,6 +52,8 @@ install_mongo() {
     arch="x86_64"
   elif [ "arm64" = "$(uname -m)" ]; then
     arch="arm64"
+  elif [ "aarch64" = "$(uname -m)" ]; then
+    arch="aarch64"
   else
     arch="i686"
   fi
