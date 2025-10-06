@@ -6,34 +6,7 @@ function unify_version {
 # calculate linux distribution tag to match:
 # https://www.mongodb.com/try/download/community-edition/releases/archive
 function get_distro_tag() {
-  if [ -f /etc/os-release ]; then
-    . /etc/os-release
-    case "$ID" in
-      ubuntu)
-        echo "ubuntu${VERSION_ID//./}"
-        ;;
-      debian)
-        echo "debian${VERSION_ID%%.*}"
-        ;;
-      amzn|amazon)
-        echo "amazon${VERSION_ID%%.*}"
-        ;;
-      centos)
-        echo "rhel${VERSION_ID%%.*}0"
-        ;;
-      rhel)
-        echo "rhel${VERSION_ID%%.*}0"
-        ;;
-      suse)
-        echo "suse${VERSION_ID%%.*}"
-        ;;
-      *)
-        echo "$ID${VERSION_ID}"
-        ;;
-    esac
-  else
-    echo "unknown"
-  fi
+  echo "ubuntu2404"
 }
 
 install_mongo() {
